@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\01_RU\\cos4311\\4311Project\\16_Mediator\\MediatorPattern\\MediatorPattern.csproj",
+      "projectUniqueName": "C:\\Users\\busne\\source\\repos\\pattern-destign\\Behavioral\\Mediator\\MediatorPattern.csproj",
       "projectName": "MediatorPattern",
-      "projectPath": "D:\\01_RU\\cos4311\\4311Project\\16_Mediator\\MediatorPattern\\MediatorPattern.csproj",
+      "projectPath": "C:\\Users\\busne\\source\\repos\\pattern-destign\\Behavioral\\Mediator\\MediatorPattern.csproj",
       "packagesPath": "C:\\Users\\busne\\.nuget\\packages\\",
-      "outputPath": "D:\\01_RU\\cos4311\\4311Project\\16_Mediator\\MediatorPattern\\obj\\",
+      "outputPath": "C:\\Users\\busne\\source\\repos\\pattern-destign\\Behavioral\\Mediator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
