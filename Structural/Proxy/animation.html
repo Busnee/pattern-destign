@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+  /* background-image: url("water0001.png"); */
+  background-repeat: no-repeat;
+  /* animation-name: example; */
+  animation-duration: 3s;
+}
+/* #myAnimation {
+  width: 1000px;
+  height: 1000px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+} */
+
+@keyframes example {
+  0%   {background-image: url("img/water0000.png");}
+  10%  {background-image: url("img/water0001.png");}
+  20%  {background-image: url("img/water0000.png");}
+  30% {background-image: url("img/water0001.png");}
+  40%  {background-image: url("img/water0000.png");}
+  50% {background-image: url("img/water0001.png");}
+  60%   {background-image: url("img/water0000.png");}
+  70%  {background-image: url("img/water0001.png");}
+  80%  {background-image: url("img/water0000.png");}
+  90% {background-image: url("img/water0001.png");}
+  100%  {background-image: url("img/water0000.png");}
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove1()">Click Me</button> 
+</p>
+
+<!-- <div id ="myContainer">
+<div id ="myAnimation"></div>
+</div> -->
+<img id="imgg" src="/img/plant0000.png" alt="">
+
+<script>
+
+function myMove1(){
+    var id = null;
+    var pos = 0;
+    var img1 = $("#imgg").attr("src")
+    var elem = document.getElementById("imgg");
+    id = setInterval(animate, 1000)
+    function animate(){
+        if(pos == 10 ){
+            clearInterval(id)
+            $(elem).attr("src",img1)
+            return
+        }
+        if(pos%2==0){
+            $(elem).attr("src","/img/fertilize0000.png")
+        }else{
+            $(elem).attr("src","/img/fertilize0001.png")
+        }
+        pos++
+    }
+
+}
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>

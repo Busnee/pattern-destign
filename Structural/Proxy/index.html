@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="Proxy.js"></script>
+    <title>Proxy Pattern</title>    
+    <script>
+        const plant = new Plant()
+        const plantProxy = new PlantProxy(plant)
+        $(document).ready(function(){
+            console.log("----WEB APP----")            
+            setPlantImg(plantProxy)
+        })
+    </script>
+</head>
+<style>
+    button{
+        width: 80px;
+        height: 40px;
+        background-color:  lightblue;
+        border: 2px solid rgb(86, 152, 193);
+        border-radius: 1rem;
+    }
+    button:hover{
+        background-color: lightskyblue;
+    }
+    button:disabled{
+        border-color: gray;
+        background-color: lightgray;
+    }
+</style>
+<body>
+    <h1 style="justify-self: center; margin-bottom: 0;">Proxy Pattern</h1>
+    <div style="width: 400px; height: 400px; background-color: lightpink; justify-self: center;">
+        <img id="plantImg" src="" alt="">
+    </div>
+    <div style="display: flex; justify-self: center; justify-content:space-around; width: 400px;">
+        <button id="btnWater" onclick="waterPlant()">Water</button>        
+        <button id="btnFertilize" onclick="fertilizePlant()">Fertilize</button>
+        <button id="btnHarvest" onclick="harvestPlant()">Harvest</button>
+        <script>
+            function waterPlant(){
+                water(plantProxy)
+            }
+            function fertilizePlant(){
+                fertilize(plantProxy)
+            }
+            function harvestPlant(){
+                harvest(plantProxy)
+            }
+        </script>
+    </div>
+    <h4 id="status" style="justify-self: center;"></h4>
+</body>
+<script>    
+        function setPlantImg(proxy){
+            if(proxy.growthPercent >= 100){
+                $("#btnWater").prop("disabled", true)
+                $("#btnFertilize").prop("disabled", true)
+                $("#btnHarvest").prop("disabled", false)
+                var status = proxy.realPlant.getStatus()
+                $("#status").text(`${status.charAt(0).toUpperCase()}${status.slice(1)}`)
+            }else {
+                $("#btnWater").prop("disabled", false)
+                $("#btnFertilize").prop("disabled", false)
+                $("#btnHarvest").prop("disabled", true)
+                $("#status").text("Growing " + proxy.growthPercent + "%")
+
+            }
+
+            if(proxy.growthPercent >= 100){
+                $("#plantImg").attr("src","./img/plant0015.png")
+
+            } else if(proxy.growthPercent >= 70){
+                $("#plantImg").attr("src","./img/plant0009.png")
+
+            } else if(proxy.growthPercent >= 30){
+                $("#plantImg").attr("src","./img/plant0008.png")
+
+            } else if(proxy.growthPercent >= 1){
+                $("#plantImg").attr("src","./img/plant0001.png")
+
+            } else {
+                $("#plantImg").attr("src","./img/plant0000.png")
+            } 
+            console.log("setPlantImg : ", proxy.growthPercent)
+        }
+        function water(proxy){
+            $("button").prop("disabled", true)
+            var id = setInterval(animate,500)
+            var elem = $("#plantImg")
+            let img1 = ""
+            let img2 = ""
+            if(proxy.growthPercent < 1){
+                img1 = "./img/water0000.png"
+                img2 = "./img/water0001.png"
+            }else if(proxy.growthPercent < 30){
+                img1 = "./img/water0002.png"
+                img2 = "./img/water0003.png"
+            }else if(proxy.growthPercent < 70){
+                img1 = "./img/water0004.png"
+                img2 = "./img/water0005.png"
+            }else if(proxy.growthPercent < 100){
+                img1 = "./img/water0006.png"
+                img2 = "./img/water0007.png"
+            }
+            var pos = 0
+            function animate(){
+                if(pos == 6 ){
+                    clearInterval(id)            
+                    $("button").prop("disabled", false)
+                    setPlantImg(plantProxy)
+                    return
+                }
+                if(pos%2==0){
+                    $(elem).attr("src",img1)
+                }else{
+                    $(elem).attr("src",img2)
+                }
+                pos++
+            }
+            console.log(proxy.water(), proxy.growthPercent)
+        }     
+        function fertilize(proxy){
+            $("button").prop("disabled", true)
+            var id = setInterval(animate,500)
+            var elem = $("#plantImg")
+            let img1 = ""
+            let img2 = ""
+            if(proxy.growthPercent < 1){
+                img1 = "./img/fertilize0000.png"
+                img2 = "./img/fertilize0001.png"
+            }else if(proxy.growthPercent < 30){
+                img1 = "./img/fertilize0002.png"
+                img2 = "./img/fertilize0003.png"
+            }else if(proxy.growthPercent < 70){
+                img1 = "./img/fertilize0004.png"
+                img2 = "./img/fertilize0005.png"
+            }else if(proxy.growthPercent < 100){
+                img1 = "./img/fertilize0006.png"
+                img2 = "./img/fertilize0007.png"
+            }
+            var pos = 0
+            function animate(){
+                if(pos == 6 ){
+                    clearInterval(id)            
+                    $("button").prop("disabled", false)
+                    setPlantImg(plantProxy)
+                    return
+                }
+                if(pos%2==0){
+                    $(elem).attr("src",img1)
+                }else{
+                    $(elem).attr("src",img2)
+                }
+                pos++
+            }
+            console.log(proxy.fertilize(), proxy.growthPercent)
+        }     
+        function harvest(proxy){
+            $("button").prop("disabled", true)
+            console.log(proxy.harvest(), proxy.growthPercent)
+            setPlantImg(plantProxy)
+        }     
+    </script>
+</html>

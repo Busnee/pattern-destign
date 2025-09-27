@@ -1,0 +1,5 @@
+complie ts to js : tsc filename.ts
+complie ts to js : tsc
+tsc watch mode : tsc -w
+tsc watch mode : tsc -watch
+run js : node filename.js

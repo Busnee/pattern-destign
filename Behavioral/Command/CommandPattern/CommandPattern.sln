@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM", "ATM\ATM.csproj", "{D66FB3B2-EDD5-47D7-BC44-46927D444205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{BFC02626-09F5-4FBB-B9BA-7A83AAF31911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileBanking", "MobileBanking\MobileBanking.csproj", "{E67E2927-548D-439D-8B3D-08A4D81AD364}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D66FB3B2-EDD5-47D7-BC44-46927D444205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66FB3B2-EDD5-47D7-BC44-46927D444205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66FB3B2-EDD5-47D7-BC44-46927D444205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66FB3B2-EDD5-47D7-BC44-46927D444205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC02626-09F5-4FBB-B9BA-7A83AAF31911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC02626-09F5-4FBB-B9BA-7A83AAF31911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC02626-09F5-4FBB-B9BA-7A83AAF31911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC02626-09F5-4FBB-B9BA-7A83AAF31911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E67E2927-548D-439D-8B3D-08A4D81AD364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67E2927-548D-439D-8B3D-08A4D81AD364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67E2927-548D-439D-8B3D-08A4D81AD364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67E2927-548D-439D-8B3D-08A4D81AD364}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D920BDCD-ECC1-4122-8F59-D19F7A1CAA2B}
+	EndGlobalSection
+EndGlobal

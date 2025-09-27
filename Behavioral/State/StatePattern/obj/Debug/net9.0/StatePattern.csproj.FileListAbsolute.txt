@@ -1,0 +1,14 @@
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\bin\Debug\net9.0\StatePattern.exe
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\bin\Debug\net9.0\StatePattern.deps.json
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\bin\Debug\net9.0\StatePattern.runtimeconfig.json
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\bin\Debug\net9.0\StatePattern.dll
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\bin\Debug\net9.0\StatePattern.pdb
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.AssemblyInfoInputs.cache
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.AssemblyInfo.cs
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.csproj.CoreCompileInputs.cache
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.dll
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\refint\StatePattern.dll
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.pdb
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\StatePattern.genruntimeconfig.cache
+D:\01_RU\cos4311\4311Project\19_State\StatePattern\obj\Debug\net9.0\ref\StatePattern.dll

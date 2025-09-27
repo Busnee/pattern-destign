@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyweight Pattern</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./FlyweightPattern.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+        }
+        td{
+            padding: 0%;
+        }
+        .Dirt{
+            background-color:sienna;
+        }
+        .Sandstone{
+            background-color:wheat ;
+        }
+        .Algae{
+            background-color:yellowgreen;
+        }
+        .Oxygen{
+            background-color: lightblue;
+        }
+        .Water{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table id="Map">
+
+    </table>
+    <div hidden id="dialog" style="border-color: cadetblue; border-width: 1; border-style: dashed; width: 500px; height: 200px; text-align: right; padding: 5px;">
+        <p hidden id="dialogElmId"></p>
+        <h3 style="text-align: center; margin-top: 15px; margin-bottom: 10px;">DIALOG</h3>
+        <table style="width: 100%;">
+            <tr>
+                <th style="width: 50%;">Name</th>
+                <td id="elmName"></td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td id="elmPosition"></td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td id="elmCapacity"></td>
+            </tr>
+            <tr>
+                <th>Temperature</th>
+                <td id="elmTemperature"></td>
+            </tr>
+            <tr>
+                <th>Specific Heat Capacity</th>
+                <td id="elmSpecificHeatCapacity"></td>
+            </tr>
+            <tr>
+                <th>Thermal Conductivity</th>
+                <td id="elmThermalConductivity"></td>
+            </tr>
+            <tr>
+                <th>Light Absorption</th>
+                <td id="elmLightAbsorption"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var eInfoFactory = new ElementInfoFactory();
+        m = new Map(7,5);
+
+        m.setElement(x=0, y=0, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=1, y=0, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=2, y=0, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=3, y=0, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=4, y=0, name="Algae", capacity=290, temperature=28, state="solid", specificHeatCapacity=0.2, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=5, y=0, name="Algae", capacity=290, temperature=28, state="solid", specificHeatCapacity=0.2, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=6, y=0, name="Dirt", capacity=290, temperature=26, state="solid", specificHeatCapacity=1.48, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory); 
+
+        m.setElement(x=0, y=1, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=1, y=1, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=2, y=1, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=3, y=1, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=4, y=1, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=5, y=1, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=6, y=1, name="Algae", capacity=290, temperature=28, state="solid", specificHeatCapacity=0.2, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+
+        m.setElement(x=0, y=2, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=1, y=2, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=2, y=2, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=3, y=2, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=4, y=2, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=5, y=2, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=6, y=2, name="Algae", capacity=290, temperature=28, state="solid", specificHeatCapacity=0.2, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+
+        m.setElement(x=0, y=3, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=1, y=3, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=2, y=3, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=3, y=3, name="Oxygen", capacity=750, temperature=27, state="gas", specificHeatCapacity=1.005, thermalConductivity=0.024, lightAbsorption=0.08, elementInfoFactory=eInfoFactory);
+        m.setElement(x=4, y=3, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=5, y=3, name="Water", capacity=800, temperature=26, state="liquid", specificHeatCapacity=4.179, thermalConductivity=0.609, lightAbsorption=0.25, elementInfoFactory=eInfoFactory);
+        m.setElement(x=6, y=3, name="Algae", capacity=290, temperature=28, state="solid", specificHeatCapacity=0.2, thermalConductivity=2.0, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+
+        m.setElement(x=0, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=1, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=2, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=3, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=4, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=5, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+        m.setElement(x=6, y=4, name="Sandstone", capacity=242.15, temperature=28, state="solid", specificHeatCapacity=0.8, thermalConductivity=2.9, lightAbsorption=1, elementInfoFactory=eInfoFactory);
+       
+        console.log(m.generateMap());
+
+        // $('#Map').push(m.generateMap());
+    </script>
+</body>
+</html>

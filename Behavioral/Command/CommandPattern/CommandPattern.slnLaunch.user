@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ATM\\ATM.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MobileBanking\\MobileBanking.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
